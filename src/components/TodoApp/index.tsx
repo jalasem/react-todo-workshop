@@ -36,30 +36,46 @@ const TodoApp = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
 
   return (
-    <div>
-      <form onSubmit={handleNewTodo}>
+    <div className="w-96 border-2 border-gray-500 mx-auto p-4 mt-4 rounded">
+      <form onSubmit={handleNewTodo} className="flex mb-2">
         <input
           type="text"
           value={newTask}
           onChange={handleChange}
+          className="border rounded flex-grow"
           placeholder="What needs to be done?"
         />
-        <button>Add todo</button>
+        <Button>Add todo</Button>
       </form>
 
-      <div>
+      <div className="space-y-2">
         {todos.map((todo) => (
-          <div key={`todo_${todo.id}`}>
+          <div key={`todo_${todo.id}`} className="flex space-x-2 items-center">
             <input
               checked={todo.completed}
               type="checkbox"
               onChange={() => toggleTodo(todo.id)}
             />
-            <span>{todo.text}</span>
-            {todo.completed && <span>✅</span>}
-            <Button onClick={() => removeTodo(todo.id)}>delete</Button>
+            <span
+              className={`flex-grow ${
+                todo.completed ? "line-through text-gray-500" : ""
+              }`}
+            >
+              {todo.text}
+            </span>
+            <Button
+              className="bg-[tomato] px-2 text-white capitalize rounded"
+              onClick={() => removeTodo(todo.id)}
+            >
+              delete
+            </Button>
           </div>
         ))}
+        {todos.length === 0 && (
+          <span className="block text-center text-gray-400 text-sm">
+            No todos
+          </span>
+        )}
       </div>
     </div>
   );
