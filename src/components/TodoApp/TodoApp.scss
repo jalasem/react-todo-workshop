@@ -1,0 +1,34 @@
+.TodoApp {
+  border: green 2px solid;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 25rem;
+  margin: 3rem auto;
+
+  form {
+    display: flex;
+
+    input {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .todo {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+
+    .task {
+      flex: 1;
+    }
+    button {
+      border-color: tomato;
+      color: tomato;
+      cursor: pointer;
+    }
+  }
+}

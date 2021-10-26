@@ -1,5 +1,6 @@
-import React from "react";
 import TodoApp from "./components/TodoApp";
+
+import "./index.scss";
 
 const App = () => {
   return (

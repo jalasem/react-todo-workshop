@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "../Button";
 
+import "./TodoApp.scss";
+
 interface Todo {
   id: number;
   text: string;
@@ -36,7 +38,7 @@ const TodoApp = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
 
   return (
-    <div>
+    <div className="TodoApp">
       <form onSubmit={handleNewTodo}>
         <input
           type="text"
@@ -49,13 +51,13 @@ const TodoApp = () => {
 
       <div>
         {todos.map((todo) => (
-          <div key={`todo_${todo.id}`}>
+          <div className="todo" key={`todo_${todo.id}`}>
             <input
               checked={todo.completed}
               type="checkbox"
               onChange={() => toggleTodo(todo.id)}
             />
-            <span>{todo.text}</span>
+            <span className="task">{todo.text}</span>
             {todo.completed && <span>✅</span>}
             <Button onClick={() => removeTodo(todo.id)}>delete</Button>
           </div>
