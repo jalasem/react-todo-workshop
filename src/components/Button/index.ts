@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const StyledButton = styled.button`
+const Button = styled.button`
   color: #333;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -25,4 +25,4 @@ const StyledButton = styled.button`
     `}
 `;
 
-export default StyledButton;
+export default Button;

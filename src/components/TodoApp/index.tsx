@@ -44,7 +44,9 @@ const TodoApp = () => {
           onChange={handleChange}
           placeholder="What needs to be done?"
         />
-        <button>Add todo</button>
+        <Button primary padding="1rem 2rem">
+          Add todo
+        </Button>
       </form>
 
       <div>
